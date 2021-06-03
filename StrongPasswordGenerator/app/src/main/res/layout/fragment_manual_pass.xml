@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="425dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".ManualPassFragment"
+    android:background="@color/colorFragmentBackground">
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/center_vertical_manualFragment"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent=".45"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+    <EditText
+        android:id="@+id/inputCustomPassword"
+        android:hint="Name_ABC123"
+        android:layout_width="fill_parent"
+        android:layout_marginLeft="@dimen/edge_margins"
+        android:layout_marginRight="@dimen/edge_margins"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="@id/center_vertical_manualFragment"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"/>
+
+    <TextView
+        android:id="@+id/manualPromptDisplay"
+        android:text="Input a custom password here:"
+        android:textSize="@dimen/text_size"
+        android:layout_width="fill_parent"
+        android:layout_marginRight="@dimen/edge_margins"
+        android:layout_marginLeft="@dimen/edge_margins"
+        android:layout_marginBottom="@dimen/view_spacing"
+        app:layout_constraintBottom_toTopOf="@id/center_vertical_manualFragment"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_height="wrap_content" />
+
+    <Button
+        android:id="@+id/switchToRandom"
+        android:text="Generate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_margin="@dimen/edge_margins" />
+
+    <Button
+        android:id="@+id/submit_custom_button"
+        android:text="Enter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="@id/inputCustomPassword"
+        app:layout_constraintLeft_toRightOf="@id/paste_button"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintRight_toRightOf="parent"/>
+
+    <Button
+        android:id="@+id/paste_button"
+        android:text="Paste"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="@id/submit_custom_button"
+        app:layout_constraintRight_toLeftOf="@id/submit_custom_button"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

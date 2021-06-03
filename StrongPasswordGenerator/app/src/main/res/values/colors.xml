@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#6200EE</color>
+    <color name="colorPrimaryDark">#3700B3</color>
+    <color name="colorAccent">#03DAC5</color>
+    <color name="colorFragmentBackground">#E6E6E6</color>
+    <color name="lightFragmentBackground">#E6E6E6</color>
+    <color name="darkFragmentBackground">#3C3C3C</color>
+    <color name="iconBackground" >#959595</color>
+    <color name="colorText">#070707</color>
+    <color name="lightGreen">#33E13A</color>
+    <color name="brightRed">#FA3122</color>
+    <color name="regularYellow">#F3FB06</color>
+
+    <color name="darkThemeText">#FFFFFF</color>
+    <color name="darkBackground">#2D2D2D</color>
+    <color name="lightBackground">#FFFFFF</color>
+
+    <color name="darkButtonTint">#141414</color>
+</resources>

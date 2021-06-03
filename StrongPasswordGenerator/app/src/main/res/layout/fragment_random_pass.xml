@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="425dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".RandomPassFragment"
+    android:background="@color/colorFragmentBackground">
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/center_vertical_randomFragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent=".5"
+        />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/center_horizontal_randomFragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent=".57"
+        />
+
+    <CheckBox
+        android:id="@+id/upperCase_check"
+        android:text="Uppercase Letters"
+        android:textSize="@dimen/text_size"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toTopOf="@id/center_horizontal_randomFragment"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginLeft="50dp"
+        android:maxWidth="150dp"
+        android:textColor="@null"
+        android:layout_marginBottom="@dimen/view_spacing"/>
+    <CheckBox
+        android:id="@+id/specialChars_check"
+        android:text="Special Characters"
+        android:textSize="@dimen/text_size"
+        android:layout_width="wrap_content"
+        android:maxWidth="150dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="@id/center_vertical_randomFragment"
+        app:layout_constraintBottom_toBottomOf="@id/center_horizontal_randomFragment"
+        android:layout_marginBottom="@dimen/view_spacing"
+        android:textColor="@null"
+        android:layout_marginLeft="@dimen/view_spacing"/>
+    <CheckBox
+        android:id="@+id/numbers_check"
+        android:text="Numbers"
+        android:textSize="@dimen/text_size"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toTopOf="@id/upperCase_check"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginLeft="50dp"
+        android:textColor="@null"
+        android:layout_marginBottom="@dimen/view_spacing" />
+    <CheckBox
+        android:id="@+id/letters_check"
+        android:text="Letters"
+        android:textSize="@dimen/text_size"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@null"
+        app:layout_constraintLeft_toLeftOf="@id/center_vertical_randomFragment"
+        app:layout_constraintBottom_toTopOf="@id/specialChars_check"
+        android:layout_marginBottom="@dimen/view_spacing"
+        android:layout_marginLeft="@dimen/view_spacing"/>
+
+    <TextView
+        android:id="@+id/prompt_text"
+        android:text="Password Length:"
+        android:textSize="@dimen/text_size"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginLeft="@dimen/edge_margins"
+        app:layout_constraintBottom_toTopOf="@id/letters_check"
+        android:layout_marginBottom="@dimen/view_spacing"/>
+
+    <EditText
+        android:id="@+id/length_input"
+        android:hint=" Enter here"
+        android:textSize="@dimen/text_size"
+        android:layout_width="180dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="@id/center_vertical_randomFragment"
+        app:layout_constraintBottom_toBottomOf="@id/prompt_text"
+        app:layout_constraintTop_toTopOf="@id/prompt_text"/>
+
+    <Button
+        android:id="@+id/submit_params_button"
+        android:text="@string/submit_button_text"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@id/center_horizontal_randomFragment"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <TextView
+        android:id="@+id/display_password"
+        android:textSize="@dimen/text_size"
+        android:text=""
+        app:layout_constraintTop_toBottomOf="@id/submit_params_button"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginTop="@dimen/view_spacing"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <Button
+        android:id="@+id/switchToManual"
+        android:text="Set custom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_margin="@dimen/edge_margins"/>
+
+    <TextView
+        android:id="@+id/strengthFinalText"
+        android:text="Strength: "
+        android:textSize="@dimen/text_size"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginLeft="@dimen/edge_margins"
+        app:layout_constraintTop_toBottomOf="@id/display_password"
+        android:layout_marginTop="@dimen/view_spacing"/>
+
+    <TextView
+        android:text=""
+        android:textSize="@dimen/text_size"
+        android:id="@+id/strengthTextDisplay"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toRightOf="@id/strengthFinalText"
+        app:layout_constraintTop_toTopOf="@id/strengthFinalText"/>
+
+    <ProgressBar
+        android:id="@+id/strengthProgressBar"
+        android:max="0"
+        android:min="0"
+        android:layout_width="fill_parent"
+        android:progressTint="@color/brightRed"
+        android:layout_marginLeft="@dimen/edge_margins"
+        android:layout_marginRight="@dimen/edge_margins"
+        android:layout_marginTop="@dimen/view_spacing"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/strengthFinalText"
+        android:layout_height="wrap_content"
+        style="@style/Widget.AppCompat.ProgressBar.Horizontal"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

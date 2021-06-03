@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SettingsActivity">
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/themeSectionTop"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent=".2"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/buttonSectionTop"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent=".8"/>
+
+    <TextView
+        android:id="@+id/themePrompt"
+        android:layout_width="wrap_content"
+        android:textSize="@dimen/text_size"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="@id/themeSectionTop"
+        android:layout_marginLeft="@dimen/edge_margins"
+        android:text="Select an application theme:"/>
+
+    <CheckBox
+        android:id="@+id/lightCheckbox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/themePrompt"
+        android:layout_marginTop="@dimen/view_spacing"
+        android:layout_marginLeft="@dimen/edge_margins"
+        android:text="Light"/>
+    <CheckBox
+        android:id="@+id/darkCheckbox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/lightCheckbox"
+        android:layout_marginTop="@dimen/view_spacing"
+        android:layout_marginLeft="@dimen/edge_margins"
+        android:text="Dark"/>
+
+    <Button
+        android:id="@+id/applySettingsButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Apply"
+        android:textSize="@dimen/button_text_size"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/buttonSectionTop"
+        app:layout_constraintLeft_toRightOf="@id/cancelSettingsButton"/>
+
+    <Button
+        android:id="@+id/cancelSettingsButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Cancel"
+        android:textSize="@dimen/button_text_size"
+        app:layout_constraintRight_toLeftOf="@id/applySettingsButton"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/buttonSectionTop"     />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

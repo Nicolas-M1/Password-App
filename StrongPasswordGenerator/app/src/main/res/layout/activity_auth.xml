@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AuthActivity"
+    android:theme="@style/DarkTheme">
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/horizontal_guideline_upper"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent=".175"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/horizontal_guideline_lower"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent=".8"/>
+
+    <TextView
+        android:id="@+id/authenticationScreenText"
+        android:text="Please verify your identity using biometrics or your device password in order to continue."
+        android:layout_width="0dp"
+        android:textSize="@dimen/authenticateScreenTextSize"
+        android:layout_height="wrap_content"
+        app:layout_constraintWidth_percent=".8"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@id/horizontal_guideline_upper" />
+
+    <Button
+        android:id="@+id/authenticateButton"
+        android:text="Log in"
+        android:textSize="@dimen/authenticateScreenTextSize"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintBottom_toBottomOf="@id/horizontal_guideline_lower"
+        android:paddingVertical="20dp"
+        android:paddingHorizontal="50dp"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
